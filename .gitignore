@@ -1,0 +1,13 @@
+*.vs
+*bin
+*obj
+.vs/
+/.vs
+*.csproj.user
+*_BuildLog.txt
+*.log
+.idea
+**/*.userprefs
+/Mjs.AW.Common-DS/Mjs.AW.FileHelpers/Mjs.AW.FileHelpers.xml
+*.DotSettings.user
+**/coverageReport.xml
