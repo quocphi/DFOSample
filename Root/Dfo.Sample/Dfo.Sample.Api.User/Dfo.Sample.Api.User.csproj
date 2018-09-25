@@ -46,8 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Model\GetUsersAction.cs" />
+    <Compile Include="Model\GetUserByIdAction.cs" />
+    <Compile Include="Model\UpdateUserAction.cs" />
     <Compile Include="Model\CreateUserAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\GetUsersActionValidator.cs" />
+    <Compile Include="Validators\GetUserByIdActionValidator.cs" />
+    <Compile Include="Validators\UpdateUserActionValidator.cs" />
     <Compile Include="Validators\CreateUserActionValidator.cs" />
   </ItemGroup>
   <ItemGroup />

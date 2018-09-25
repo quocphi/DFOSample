@@ -9,17 +9,17 @@ using Dfo.Sample.Api.User.Validators;
 
 namespace Dfo.Sample.Api.User.Model
 {
-    public class CreateUserAction : BaseActionCommand<IUserBiz>
+    public class UpdateUserAction : BaseActionCommand<IUserBiz>
     {
         public UserDto RequestData { get; set; }
 
         public override async Task<BaseServicesResult> ExecuteActionAsync(ISessionContext context)
         {
-            var request = new CreateUserRequest
+            var request = new UpdateUserRequest
             {
                 RequestData = RequestData
             };
-            return await Execute<CreateUserResponse>(request);
+            return await Execute<UpdateUserResponse>(request);
         }
 
         public override void Init()
@@ -28,7 +28,7 @@ namespace Dfo.Sample.Api.User.Model
 
         public override bool Validate()
         {
-            ValidateResult = new CreateUserActionValidator().Validate(this);
+            ValidateResult = new UpdateUserActionValidator().Validate(this);
             return ValidateResult.IsValid;
         }
     }

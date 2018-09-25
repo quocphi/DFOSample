@@ -84,7 +84,8 @@ namespace Dfo.Sample.Core.ServiceStack
                         {
                             FieldName = item.PropertyName,
                             Params = "",
-                            MessageId = "DFO"
+                            MessageId = "DFO",
+                            Message = item.ErrorMessage.ToString()
                         });
                     }
                 }
@@ -137,7 +138,7 @@ namespace Dfo.Sample.Core.ServiceStack
                 await awaitable;
                 response = (TResponse)awaitable.GetAwaiter().GetResult();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //Need to consider whether we need to throw the App_Err
                 response = new TResponse()
@@ -150,7 +151,7 @@ namespace Dfo.Sample.Core.ServiceStack
                                 ErrorCode = HttpStatusCode.InternalServerError.ToString(),
                                 MessageId = "DFO",
                                 FieldName = "DFOF1",
-                                Message = "TestApp"
+                                Message = ex.InnerException.ToString()
                             }
                         }
                 };

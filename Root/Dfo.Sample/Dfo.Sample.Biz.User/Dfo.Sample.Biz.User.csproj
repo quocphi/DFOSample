@@ -57,6 +57,10 @@
       <Project>{52ADA0C3-ED52-42B1-A208-8A885C69624B}</Project>
       <Name>Dfo.Sample.Dto.User</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.DummyData\Dfo.Sample.DummyData.csproj">
+      <Project>{3D9835A8-374C-4BE6-ABE1-927F0CEE2E84}</Project>
+      <Name>Dfo.Sample.DummyData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dfo.Sample.IBiz.User\Dfo.Sample.IBiz.User.csproj">
       <Project>{CDC40FC5-A655-4301-BF1B-0129F3B88D25}</Project>
       <Name>Dfo.Sample.IBiz.User</Name>

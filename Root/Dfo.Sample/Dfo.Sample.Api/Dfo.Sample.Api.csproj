@@ -168,6 +168,9 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="unity.config" />
+    <Content Include="unity.Debug.config" />
+    <Content Include="unity.Release.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dfo.Sample.Api.User\Dfo.Sample.Api.User.csproj">

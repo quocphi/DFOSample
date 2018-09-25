@@ -2,8 +2,9 @@
 
 namespace Dfo.Sample.Dto.User.Request
 {
-    public class CreateUserRequest: BaseRequest
+    public class UpdateUserRequest : BaseRequest
     {
         public UserDto RequestData { get; set; }
+
     }
 }

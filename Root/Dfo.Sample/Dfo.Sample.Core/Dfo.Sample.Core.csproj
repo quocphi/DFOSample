@@ -82,6 +82,7 @@
     <Compile Include="DependencyInjection\DependencyResolver.cs" />
     <Compile Include="DependencyInjection\DependencyScope.cs" />
     <Compile Include="DependencyInjection\IDependencyParameterExtends.cs" />
+    <Compile Include="DfoRandomUtils.cs" />
     <Compile Include="DfoUtils.cs" />
     <Compile Include="Message\BaseRequest.cs" />
     <Compile Include="Message\BaseResponseT.cs" />

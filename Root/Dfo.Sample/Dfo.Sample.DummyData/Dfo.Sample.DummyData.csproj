@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52ADA0C3-ED52-42B1-A208-8A885C69624B}</ProjectGuid>
+    <ProjectGuid>{3D9835A8-374C-4BE6-ABE1-927F0CEE2E84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dfo.Sample.Dto.User</RootNamespace>
-    <AssemblyName>Dfo.Sample.Dto.User</AssemblyName>
+    <RootNamespace>Dfo.Sample.DummyData</RootNamespace>
+    <AssemblyName>Dfo.Sample.DummyData</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,21 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Request\UpdateUserRequest.cs" />
-    <Compile Include="Request\GetUsersRequest.cs" />
-    <Compile Include="Request\GetUserByIdRequest.cs" />
-    <Compile Include="Request\CreateUserRequest.cs" />
-    <Compile Include="Response\GetUserByIdResponse.cs" />
-    <Compile Include="Response\UpdateUserResponse.cs" />
-    <Compile Include="Response\GetUsersResponse.cs" />
-    <Compile Include="Response\CreateUserResponse.cs" />
-    <Compile Include="UserDto.cs" />
+    <Compile Include="UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dfo.Sample.Core\Dfo.Sample.Core.csproj">
-      <Project>{11E74589-0AAA-4DAA-8472-1424A6B4C139}</Project>
-      <Name>Dfo.Sample.Core</Name>
+    <ProjectReference Include="..\Dfo.Sample.Dto.User\Dfo.Sample.Dto.User.csproj">
+      <Project>{52ADA0C3-ED52-42B1-A208-8A885C69624B}</Project>
+      <Name>Dfo.Sample.Dto.User</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

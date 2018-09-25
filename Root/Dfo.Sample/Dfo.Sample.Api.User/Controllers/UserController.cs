@@ -13,5 +13,27 @@ namespace Dfo.Sample.Api.User.Controllers
             var result = action.ExecuteActionAsync(SessionContext);
             return new HttpActionResult(result.Result, Request);
         }
+
+        [HttpPost]
+        public HttpActionResult UpdateUser([FromBody] UpdateUserAction action)
+        {
+            var result = action.ExecuteActionAsync(SessionContext);
+            return new HttpActionResult(result.Result, Request);
+        }
+
+        [HttpPost]
+        public HttpActionResult GetUserById([FromBody] GetUserByIdAction action)
+        {
+            var result = action.ExecuteActionAsync(SessionContext);
+            return new HttpActionResult(result.Result, Request);
+        }
+
+        [HttpPost]
+        public HttpActionResult GetUsers()
+        {
+            var action = new GetUsersAction();
+            var result = action.ExecuteActionAsync(SessionContext);
+            return new HttpActionResult(result.Result, Request);
+        }
     }
 }

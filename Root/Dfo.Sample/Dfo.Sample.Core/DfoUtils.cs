@@ -3,8 +3,9 @@ using System.Configuration;
 
 namespace Dfo.Sample.Core
 {
-    public class DfoUtils
+    public static class DfoUtils
     {
+        #region Configuration
         public static string GetStringKey(string keyName, string defaultValue)
         {
             string value = GetConfigApp(keyName);
@@ -48,5 +49,15 @@ namespace Dfo.Sample.Core
         {
             return ConfigurationManager.AppSettings[keyName];
         }
+        #endregion
+
+        #region Number
+        public static int NextIntergerNumber(this Random rng)
+        {
+            int firstBits = rng.Next(0, 1 << 4) << 28;
+            int lastBits = rng.Next(0, 1 << 28);
+            return firstBits | lastBits;
+        }
+        #endregion
     }
 }
