@@ -4,7 +4,7 @@ using System.Web.Http.Dispatcher;
 
 namespace Dfo.Sample.Core.Web.Resolvers
 {
-    public class CustomResolverAssembly: DefaultAssembliesResolver
+    public class CustomResolverAssembly : DefaultAssembliesResolver
     {
         public override ICollection<Assembly> GetAssemblies()
         {

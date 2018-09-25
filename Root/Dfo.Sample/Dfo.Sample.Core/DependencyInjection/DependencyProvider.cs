@@ -5,6 +5,7 @@ namespace Dfo.Sample.Core.DependencyInjection
     public class DependencyProvider
     {
         #region Private Declarations
+
         private static readonly object SInjectorLock = new object();
         private static IDependencyInjector _injector;
 

@@ -31,8 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\Lib\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,11 +46,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Model\CreateUserAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\CreateUserActionValidator.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Validators\" />
+    <ProjectReference Include="..\Dfo.Sample.Core.ServiceStack\Dfo.Sample.Core.ServiceStack.csproj">
+      <Project>{63282A73-F38E-490C-B747-043378ACD555}</Project>
+      <Name>Dfo.Sample.Core.ServiceStack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.Core.Validator\Dfo.Sample.Core.Validator.csproj">
+      <Project>{EC357F99-F89C-4810-8CEB-122862ED4B87}</Project>
+      <Name>Dfo.Sample.Core.Validator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.Core.Web\Dfo.Sample.Core.Web.csproj">
+      <Project>{4A1DFB20-E346-45B0-A392-324FD57EF69F}</Project>
+      <Name>Dfo.Sample.Core.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.Core\Dfo.Sample.Core.csproj">
+      <Project>{11E74589-0AAA-4DAA-8472-1424A6B4C139}</Project>
+      <Name>Dfo.Sample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.Dto.User\Dfo.Sample.Dto.User.csproj">
+      <Project>{52ADA0C3-ED52-42B1-A208-8A885C69624B}</Project>
+      <Name>Dfo.Sample.Dto.User</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.IBiz.User\Dfo.Sample.IBiz.User.csproj">
+      <Project>{CDC40FC5-A655-4301-BF1B-0129F3B88D25}</Project>
+      <Name>Dfo.Sample.IBiz.User</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

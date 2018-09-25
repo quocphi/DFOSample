@@ -8,7 +8,7 @@ using System.Web.Http.ExceptionHandling;
 
 namespace Dfo.Sample.Core.Web.Configurations
 {
-    public class GlobalExceptionHandler: ExceptionHandler
+    public class GlobalExceptionHandler : ExceptionHandler
     {
         public override void Handle(ExceptionHandlerContext context)
         {

@@ -77,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dfo.Sample.Core.Web\Dfo.Sample.Core.Web.csproj">
+      <Project>{4A1DFB20-E346-45B0-A392-324FD57EF69F}</Project>
+      <Name>Dfo.Sample.Core.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dfo.Sample.Core\Dfo.Sample.Core.csproj">
       <Project>{11e74589-0aaa-4daa-8472-1424a6b4c139}</Project>
       <Name>Dfo.Sample.Core</Name>

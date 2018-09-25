@@ -1,10 +1,9 @@
-﻿using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Controllers;
 
 namespace Dfo.Sample.Core.Web.Controllers
 {
-    public class BaseApiAuthorizeFilter: AuthorizeAttribute
+    public class BaseApiAuthorizeFilter : AuthorizeAttribute
     {
         public override void OnAuthorization(HttpActionContext actionContext)
         {

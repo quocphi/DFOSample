@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dfo.Sample.Entity.User
+﻿namespace Dfo.Sample.Entity.User
 {
     public class User
     {

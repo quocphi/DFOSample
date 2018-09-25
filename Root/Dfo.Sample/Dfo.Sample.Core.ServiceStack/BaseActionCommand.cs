@@ -1,5 +1,6 @@
 ﻿using Dfo.Sample.Core.DependencyInjection;
 using Dfo.Sample.Core.Message;
+using Dfo.Sample.Core.Web.Base;
 using FluentValidation.Results;
 using System;
 using System.Linq;
@@ -9,10 +10,6 @@ using System.Threading.Tasks;
 
 namespace Dfo.Sample.Core.ServiceStack
 {
-    /// <summary>
-    /// BaseActionCommand for whole implementation on the Action classes.
-    /// </summary>
-    /// <typeparam name="TBusiness">IBusinessLogic</typeparam>E:\Works\M35.Source\Root\DS\Mjs.AW.CommonWeb-DS\Mjs.AW.Common.Web.API\Actions\BaseActionCommand.cs
     public abstract class BaseActionCommand<TBusiness> : BaseCommand<TBusiness>, ICommandAction, IValidateModelState
         where TBusiness : class
     {
@@ -22,10 +19,7 @@ namespace Dfo.Sample.Core.ServiceStack
 
         #endregion IValidateModelState Implementation
 
-        #region Public Properties
 
-
-        #endregion Public Properties
 
         #region Private Properties
 
@@ -57,14 +51,8 @@ namespace Dfo.Sample.Core.ServiceStack
         #region Public Methods
 
         /// <summary> ExecuteAction </summary> <param name="context">IDataContext</param> <returns>Task<BaseServicesResult></returns>
-        public abstract Task<BaseServicesResult> ExecuteAction(IDataContext context);
+        public abstract Task<BaseServicesResult> ExecuteActionAsync(ISessionContext context);
 
-        /// <summary>
-        /// Invokes Business Logic's method by name
-        /// </summary>
-        /// <typeparam name="TResponse">Method responese</typeparam>
-        /// <param name="methodArgs">Parameters's method</param>
-        /// <returns>Response's method</returns>
         public async Task<BaseServicesResult> Execute<TResponse>(params object[] methodArgs)
             where TResponse : BaseResponse, new()
         {
@@ -126,12 +114,6 @@ namespace Dfo.Sample.Core.ServiceStack
 
         #region Private Methods
 
-        /// <summary>
-        /// Invokes Business Logic's method by name
-        /// </summary>
-        /// <typeparam name="TResponse">Method responese</typeparam>
-        /// <param name="methodArgs">Parameters's method</param>
-        /// <returns>Response's method</returns>
         private async Task<TResponse> OnExecute<TResponse>(params object[] methodArgs)
             where TResponse : BaseResponse, new()
         {

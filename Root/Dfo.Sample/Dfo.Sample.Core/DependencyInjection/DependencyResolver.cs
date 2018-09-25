@@ -3,7 +3,7 @@ using Unity;
 
 namespace Dfo.Sample.Core.DependencyInjection
 {
-    public class DependencyResolver: DependencyScope, IDependencyResolver, System.Web.Mvc.IDependencyResolver
+    public class DependencyResolver : DependencyScope, IDependencyResolver, System.Web.Mvc.IDependencyResolver
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UnityDependencyResolver"/> class.

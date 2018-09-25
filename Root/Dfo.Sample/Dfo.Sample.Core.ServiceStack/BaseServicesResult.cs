@@ -8,6 +8,7 @@ namespace Dfo.Sample.Core.ServiceStack
         public HttpStatusCode ReturnCode { get; set; }
         public object ReturnData { get; set; }
         private DateTime _timestamp;
+
         public DateTime TimeStamp
         {
             get

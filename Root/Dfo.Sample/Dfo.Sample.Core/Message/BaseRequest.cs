@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dfo.Sample.Core.Message
+﻿namespace Dfo.Sample.Core.Message
 {
     public class BaseRequest
     {
