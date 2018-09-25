@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dfo.Sample.Core.ServiceStack
 {
-    public abstract class BaseCommand<T> : Disposable
-        where T : class
+    public interface IValidateModelState
     {
-        public abstract void Init();
-
-        public abstract bool Validate();
+        ValidationResult ValidateResult { get; set; }
     }
+}

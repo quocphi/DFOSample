@@ -11,3 +11,4 @@
 /Mjs.AW.Common-DS/Mjs.AW.FileHelpers/Mjs.AW.FileHelpers.xml
 *.DotSettings.user
 **/coverageReport.xml
+Root/Dfo.Sample/packages/*
