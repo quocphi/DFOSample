@@ -1,6 +1,8 @@
-﻿namespace Dfo.Sample.Dto.User.Request
+﻿using Dfo.Sample.Core.Message;
+
+namespace Dfo.Sample.Dto.User.Request
 {
-    public class CreateUserRequest
+    public class CreateUserRequest: BaseRequest
     {
     }
 }

@@ -8,7 +8,7 @@ namespace Dfo.Sample.Api.User.Validators
     {
         public CreateUserActionValidator()
         {
-            RuleFor(o => o.RequestData.Age).NotNull();
+            RuleFor(o => o.RequestData).NotNull();
         }
     }
 }

@@ -1,4 +1,10 @@
-﻿namespace Dfo.Sample.Dto.User
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dfo.Sample.Dto.User
 {
     public class UserDto
     {
