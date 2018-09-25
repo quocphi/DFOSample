@@ -2,8 +2,8 @@
 using Dfo.Sample.Core.Web.Base;
 using Dfo.Sample.Dto.User;
 using Dfo.Sample.IBiz.User;
-using Dfo.Sample.IBiz.User.Request;
-using Dfo.Sample.IBiz.User.Response;
+using Dfo.Sample.Dto.User.Request;
+using Dfo.Sample.Dto.User.Response;
 using System.Threading.Tasks;
 
 namespace Dfo.Sample.Api.User.Model

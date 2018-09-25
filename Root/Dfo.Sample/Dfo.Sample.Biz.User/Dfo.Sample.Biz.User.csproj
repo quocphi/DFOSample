@@ -44,5 +44,15 @@
     <Compile Include="CreateUserBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dfo.Sample.Core.ServiceStack\Dfo.Sample.Core.ServiceStack.csproj">
+      <Project>{63282A73-F38E-490C-B747-043378ACD555}</Project>
+      <Name>Dfo.Sample.Core.ServiceStack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.IBiz.User\Dfo.Sample.IBiz.User.csproj">
+      <Project>{CDC40FC5-A655-4301-BF1B-0129F3B88D25}</Project>
+      <Name>Dfo.Sample.IBiz.User</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

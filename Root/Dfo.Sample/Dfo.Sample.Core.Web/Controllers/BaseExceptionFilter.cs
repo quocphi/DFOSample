@@ -6,7 +6,6 @@ namespace Dfo.Sample.Core.Web.Controllers
     {
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
-            // TODO
             base.OnException(actionExecutedContext);
         }
     }

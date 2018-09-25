@@ -41,8 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Request\CreateUserRequest.cs" />
+    <Compile Include="Response\CreateUserResponse.cs" />
     <Compile Include="UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dfo.Sample.Core\Dfo.Sample.Core.csproj">
+      <Project>{11E74589-0AAA-4DAA-8472-1424A6B4C139}</Project>
+      <Name>Dfo.Sample.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

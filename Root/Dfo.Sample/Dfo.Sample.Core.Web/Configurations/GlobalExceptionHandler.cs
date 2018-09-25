@@ -68,7 +68,6 @@ namespace Dfo.Sample.Core.Web.Configurations
                     new { Data = new { Result = new BaseResponse() { Success = false, Errors = new ServiceErrors() { new ServiceError() { Message = Content, ErrorCode = ((int)StatusCode).ToString(), Description = MessageTitle, MessageId = MessageId, FieldName = FieldName } } } } });
                 response.RequestMessage = Request;
 
-                //call audit and trace
                 return Task.FromResult(response);
             }
         }
