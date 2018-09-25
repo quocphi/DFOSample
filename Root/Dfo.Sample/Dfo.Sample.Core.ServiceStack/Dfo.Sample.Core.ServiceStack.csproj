@@ -54,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseAction.cs" />
     <Compile Include="BaseActionCommand.cs" />
     <Compile Include="BaseCommand.cs" />
     <Compile Include="BaseRequest.cs" />
-    <Compile Include="BaseResponse.cs" />
     <Compile Include="BaseServicesResult.cs" />
     <Compile Include="BizCommand.cs" />
     <Compile Include="Command.cs" />
@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dfo.Sample.Core\Dfo.Sample.Core.csproj">
+      <Project>{11e74589-0aaa-4daa-8472-1424a6b4c139}</Project>
+      <Name>Dfo.Sample.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

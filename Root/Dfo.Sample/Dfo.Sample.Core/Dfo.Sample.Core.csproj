@@ -83,6 +83,11 @@
     <Compile Include="DependencyInjection\DependencyScope.cs" />
     <Compile Include="DependencyInjection\IDependencyParameterExtends.cs" />
     <Compile Include="DfoUtils.cs" />
+    <Compile Include="Message\BaseRequest.cs" />
+    <Compile Include="Message\BaseResponse.cs" />
+    <Compile Include="Message\BaseResponseHttpActionResult.cs" />
+    <Compile Include="Message\ServiceErrors.cs" />
+    <Compile Include="Message\ServiceError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,11 @@
-﻿
-using Dfo.Sample.Core.DependencyInjection;
+﻿using Dfo.Sample.Core.DependencyInjection;
+using Dfo.Sample.Core.Message;
 using FluentValidation.Results;
 using System;
-using System.Collections;
 using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace Dfo.Sample.Core.ServiceStack
 {
@@ -26,24 +24,6 @@ namespace Dfo.Sample.Core.ServiceStack
 
         #region Public Properties
 
-        /// <summary>
-        /// Gets or sets Browser Session Id
-        public string BrowserSessionId { get; set; }
-
-        /// <summary>
-        /// Gets or sets UserLogin
-        /// </summary>
-        public string UserLogin { get; set; }
-
-        /// <summary>
-        /// Gets or sets company code This information will be populated in OnExcecuting of ActionFilter
-        /// </summary>
-        public string CompanyCode { get; set; }
-
-        /// <summary>
-        /// Gets or sets Fiscal Year This infomation will be populated in OnExcecuting of ActionFilter
-        /// </summary>
-        public int FiscalYear { get; set; }
 
         #endregion Public Properties
 
@@ -102,7 +82,7 @@ namespace Dfo.Sample.Core.ServiceStack
                     if (result.Success == false)
                     {
                         ServiceError error = result.Errors.FirstOrDefault();
-                        statusCode = error.ErrorCode.IsNullEmpty() ? HttpStatusCode.InternalServerError : (HttpStatusCode)error.ErrorCode.ToInt32();
+                        statusCode = HttpStatusCode.InternalServerError; //set by default....
                     }
                 }
                 else
@@ -115,24 +95,22 @@ namespace Dfo.Sample.Core.ServiceStack
                         result.Errors.Add(new ServiceError()
                         {
                             FieldName = item.PropertyName,
-                            Params = item.GetParamMessage(),
-                            MessageId = !string.IsNullOrEmpty(item.ResourceName) ? item.GetMessageID() : item.ErrorMessage
+                            Params = "",
+                            MessageId = "DFO"
                         });
                     }
                 }
             }
             catch (Exception ex)
             {
-                var expDetail = BusinessLogicExceptionHandling.GetExceptionInfo(ex);
-                statusCode = expDetail.ErrorCode.IsEquals(0) ? HttpStatusCode.InternalServerError : (HttpStatusCode)expDetail.ErrorCode;
                 result.Errors = new ServiceErrors
                 {
                     new ServiceError()
                     {
-                        ErrorCode = expDetail.ErrorCode.ToString(),
-                        FieldName = expDetail.FieldName,
-                        Message = expDetail.FullMessage,
-                        MessageId = !string.IsNullOrEmpty(expDetail.MessageId) ? expDetail.MessageId : "M003",
+                        ErrorCode = HttpStatusCode.InternalServerError.ToString(),
+                        FieldName = "",
+                        Message = ex.InnerException.Message.ToString(),
+                        MessageId = "FDOMESS"
                     }
                 };
             }
@@ -142,16 +120,6 @@ namespace Dfo.Sample.Core.ServiceStack
                 ReturnCode = statusCode,
                 ReturnData = new BaseResponseHttpActionResult<TResponse>() { Result = result }
             };
-        }
-
-        public TRequest ToRequest<TRequest>()
-            where TRequest : BaseRequest, new()
-        {
-            var request = new TRequest()
-            {
-            };
-
-            return request;
         }
 
         #endregion Public Methods
@@ -171,7 +139,8 @@ namespace Dfo.Sample.Core.ServiceStack
 
             //get medthod name
             string methodName = string.Empty;
-            string nameAction = GetType().Name;
+
+            string nameAction = this.GetType().Name;
             if (!string.IsNullOrEmpty(nameAction))
             {
                 methodName = nameAction.Substring(0, nameAction.Length - 6);
@@ -179,33 +148,37 @@ namespace Dfo.Sample.Core.ServiceStack
 
             MethodBase method = _businessLogicType.GetMethod(methodName);
 
-                try
-                {
-                    dynamic awaitable = method.Invoke(_businessLogic, methodArgs);
+            try
+            {
+                dynamic awaitable = method.Invoke(_businessLogic, methodArgs);
 
-                    await awaitable;
-                    response = (TResponse)awaitable.GetAwaiter().GetResult();
-                }
-                catch (Exception ex)
+                await awaitable;
+                response = (TResponse)awaitable.GetAwaiter().GetResult();
+            }
+            catch (Exception)
+            {
+                //Need to consider whether we need to throw the App_Err
+                response = new TResponse()
                 {
-                    //Need to consider whether we need to throw the App_Err
-                    response = new TResponse()
-                    {
-                        Success = false,
-                        Errors = new ServiceErrors()
+                    Success = false,
+                    Errors = new ServiceErrors()
                         {
                             new ServiceError()
                             {
-                                ErrorCode = expDetail.ErrorCode.ToString(),
-                                MessageId = !string.IsNullOrEmpty(expDetail.MessageId) ? expDetail.MessageId : "M003",
-                                FieldName = expDetail.FieldName,
-                                Message = expDetail.FullMessage
+                                ErrorCode = HttpStatusCode.InternalServerError.ToString(),
+                                MessageId = "DFO",
+                                FieldName = "DFOF1",
+                                Message = "TestApp"
                             }
                         }
-                    };
-                }
-            }
+                };
 
+                //Log the ex....
+            }
+            finally
+            {
+                //Do something
+            }
             return response;
         }
 

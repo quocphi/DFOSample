@@ -55,7 +55,7 @@ namespace Dfo.Sample.Core.DependencyInjection
             get
             {
                 var injector = Current as DependencyInjectorManager;
-                return injector != null ? injector.DefaultResolver : null;
+                return injector?.DefaultResolver;
             }
         }
     }
