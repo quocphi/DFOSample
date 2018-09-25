@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Dfo.Sample.Core.DependencyInjection;
+using Dfo.Sample.Core.Web.Configurations;
 using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
 
 namespace Dfo.Sample.Api
 {
@@ -13,11 +8,9 @@ namespace Dfo.Sample.Api
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configuration.DependencyResolver = DependencyProvider.DefaultResolver;
+            DependencyProvider.Current.RegisterTypes();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

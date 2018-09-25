@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http.Filters;
 
-namespace Dfo.Sample.Core.Message
+namespace Dfo.Sample.Core.Web.Controllers
 {
-    public class BaseRequest
+    public class BaseApiActionFilter: ActionFilterAttribute
     {
-        public string BrowserSessionId { get; set; }
     }
 }
