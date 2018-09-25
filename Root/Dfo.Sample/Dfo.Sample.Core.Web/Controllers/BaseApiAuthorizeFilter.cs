@@ -12,7 +12,7 @@ namespace Dfo.Sample.Core.Web.Controllers
 
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
-            return base.IsAuthorized(actionContext);
+            return true;
         }
 
         protected override void HandleUnauthorizedRequest(HttpActionContext actionContext)

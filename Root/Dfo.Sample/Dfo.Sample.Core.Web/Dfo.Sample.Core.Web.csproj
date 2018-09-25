@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\SessionContext.cs" />
     <Compile Include="Base\ISessionContext.cs" />
     <Compile Include="Configurations\GlobalExceptionHandler.cs" />
     <Compile Include="Configurations\StartupHandler.cs" />

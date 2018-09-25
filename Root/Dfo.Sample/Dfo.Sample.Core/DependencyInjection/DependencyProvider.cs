@@ -5,7 +5,8 @@ namespace Dfo.Sample.Core.DependencyInjection
     public class DependencyProvider
     {
         #region Private Declarations
-
+        private const string DependencyInjectorImplAssemblyKey = "DependencyInjectorImplAssembly";
+        private const string DependencyInjectorImplTypeKey = "DependencyInjectorImplType";
         private static readonly object SInjectorLock = new object();
         private static IDependencyInjector _injector;
 
@@ -26,11 +27,20 @@ namespace Dfo.Sample.Core.DependencyInjection
                     {
                         if (_injector == null)
                         {
-                            // default to unity if not configured
                             string defaultAssemblyName = typeof(DependencyInjectorManager).Assembly.FullName;
                             string defaultTypeName = typeof(DependencyInjectorManager).FullName;
 
-                            _injector = (IDependencyInjector)AppDomain.CurrentDomain.CreateInstanceAndUnwrap(defaultAssemblyName, defaultTypeName);
+                            string configuredAssemblyName = DfoUtils.GetStringKey(DependencyInjectorImplAssemblyKey, string.Empty);
+                            string configuredTypeName = DfoUtils.GetStringKey(DependencyInjectorImplTypeKey, string.Empty);
+
+                            string assemblyName = string.IsNullOrEmpty(configuredAssemblyName)
+                                ? defaultAssemblyName
+                                : configuredAssemblyName;
+                            string typeName = string.IsNullOrEmpty(configuredTypeName)
+                                ? defaultTypeName
+                                : configuredTypeName;
+
+                            _injector = (IDependencyInjector)AppDomain.CurrentDomain.CreateInstanceAndUnwrap(assemblyName, typeName);
                         }
                     }
                 }

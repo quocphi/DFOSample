@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Unity.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Web.Compilation;
@@ -33,6 +34,7 @@ namespace Dfo.Sample.Core.DependencyInjection
 
             var section = new UnityConfigurationSection();
 
+            section = (UnityConfigurationSection)ConfigurationManager.GetSection("UnityContainerName");
             // Default container
             section.Configure(_container);
         }

@@ -41,8 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateUserDac.cs" />
+    <Compile Include="UserDac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dfo.Sample.Core.Data\Dfo.Sample.Core.Data.csproj">
+      <Project>{99FD0F24-70D0-4BD3-A0D5-C30152343A3F}</Project>
+      <Name>Dfo.Sample.Core.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

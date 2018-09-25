@@ -1,4 +1,5 @@
-﻿using Dfo.Sample.Core.Web.Base;
+﻿using Dfo.Sample.Core.DependencyInjection;
+using Dfo.Sample.Core.Web.Base;
 using System.Web.Http;
 
 namespace Dfo.Sample.Core.Web.Controllers
@@ -13,6 +14,7 @@ namespace Dfo.Sample.Core.Web.Controllers
     {
         protected BaseApiController()
         {
+            SessionContext = DependencyProvider.Current.Resolve<ISessionContext>();
         }
 
         public ISessionContext SessionContext { get; set; }

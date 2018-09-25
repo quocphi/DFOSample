@@ -41,13 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateUserBiz.cs" />
+    <Compile Include="UserBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dfo.Sample.Core.ServiceStack\Dfo.Sample.Core.ServiceStack.csproj">
       <Project>{63282A73-F38E-490C-B747-043378ACD555}</Project>
       <Name>Dfo.Sample.Core.ServiceStack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.Core\Dfo.Sample.Core.csproj">
+      <Project>{11E74589-0AAA-4DAA-8472-1424A6B4C139}</Project>
+      <Name>Dfo.Sample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dfo.Sample.Dto.User\Dfo.Sample.Dto.User.csproj">
+      <Project>{52ADA0C3-ED52-42B1-A208-8A885C69624B}</Project>
+      <Name>Dfo.Sample.Dto.User</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dfo.Sample.IBiz.User\Dfo.Sample.IBiz.User.csproj">
       <Project>{CDC40FC5-A655-4301-BF1B-0129F3B88D25}</Project>

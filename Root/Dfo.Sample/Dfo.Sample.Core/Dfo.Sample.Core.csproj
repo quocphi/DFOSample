@@ -84,6 +84,7 @@
     <Compile Include="DependencyInjection\IDependencyParameterExtends.cs" />
     <Compile Include="DfoUtils.cs" />
     <Compile Include="Message\BaseRequest.cs" />
+    <Compile Include="Message\BaseResponseT.cs" />
     <Compile Include="Message\BaseResponse.cs" />
     <Compile Include="Message\BaseResponseHttpActionResult.cs" />
     <Compile Include="Message\ServiceErrors.cs" />

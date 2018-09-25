@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace Dfo.Sample.Api.User.Model
 {
-    public class CreateUserAction : BaseActionCommand<ICreateUserBiz>
+    public class CreateUserAction : BaseActionCommand<IUserBiz>
     {
-        public CreateUserAction() : base()
-        {
-        }
-
         public UserDto RequestData { get; set; }
 
         public override async Task<BaseServicesResult> ExecuteActionAsync(ISessionContext context)

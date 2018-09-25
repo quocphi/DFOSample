@@ -3,8 +3,8 @@
     /// <summary>
     /// Provide the common component across multi layers in application
     /// </summary>
-    public interface ISessionContext
+    public class SessionContext:ISessionContext
     {
-        string TenantId { get; set; }
+        public string TenantId { get; set; }
     }
 }
